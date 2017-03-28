@@ -29,9 +29,11 @@
   		...mapState({
   			count: 'count'
   		}),
-  		countAnother: function () {  // 获取state
+
+  		// 获取getters
+  		countAnother: function () {
         return this.$store.getters.countAnother;
-      }
+      },
   	}
 	};
 </script>
