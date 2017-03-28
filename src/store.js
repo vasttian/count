@@ -19,7 +19,7 @@ const store = new Vuex.Store({
 		},
 
 		INCREMENT_WITH_VALUE(state, value) {
-      state.count +=value;
+      state.count += value;
     },
 
     // 显示和隐藏waiting

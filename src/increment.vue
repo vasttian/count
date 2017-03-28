@@ -18,7 +18,7 @@
 	// 引入mapActions
 	import {mapActions} from 'vuex';
 	export default {
-		data: {
+		data() {
 			return {
 				incrementValue: 0,
 			};
