@@ -18,8 +18,17 @@ const store = new Vuex.Store({
 			state.count--;
 		},
 
-		INCREMENT_WITH_VALUE(state, value){
+		INCREMENT_WITH_VALUE(state, value) {
       state.count +=value;
+    },
+
+    // 显示和隐藏waiting
+    SHOW_WAITING_MESSAGE(state) {
+      state.waiting = true;
+    },
+
+    HIDE_WAITING_MESSAGE(state) {
+      state.waiting = false;
     }
 	},
 	actions: {
@@ -31,9 +40,30 @@ const store = new Vuex.Store({
 			commit('DECREMENT');
 		},
 
-		incrementWithValue({commit}, value) {
-      commit("INCREMENT_WITH_VALUE",  parseInt(value, 10));
-    }
+		// 同步
+		// incrementWithValue({commit}, value) {
+		// 	let intValue = parseInt(value, 10);
+		// 	if (isNaN(intValue)) {
+		// 		throw 'Not an Interger'
+		// 	} else {
+		// 		commit("INCREMENT_WITH_VALUE", intValue);
+		// 	}
+		// }
+
+    // 异步
+    // 2s 响应
+    incrementWithValue({commit}, value) {
+    	commit("SHOW_WAITING_MESSAGE");
+      let intValue = parseInt(value, 10);
+	    setTimeout(function() {
+	      if(isNaN(intValue)) {
+	        alert("Not an Interger");
+	      } else {
+	      	commit("HIDE_WAITING_MESSAGE");
+	        commit("INCREMENT_WITH_VALUE", intValue);
+	      }
+	    }, 2000);
+	  },
 	}
 });
 

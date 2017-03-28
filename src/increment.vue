@@ -8,6 +8,8 @@
 			<input type="text" v-model="incrementValue">
 			<button @click="incrementWithValue">increment</button>
 		</div>
+		<!-- 展示信息 -->
+    <div v-if ="show">waiting</div>
 	</div>
 </template>
 
@@ -16,6 +18,18 @@
 	// 引入mapActions
 	import {mapActions} from 'vuex';
 	export default {
+		data: {
+			return {
+				incrementValue: 0,
+			}
+		},
+
+		// computed 从 state 中获取初始状态
+    computed: {
+      show: function() {
+        return this.$store.state.waiting;
+      }
+    },
 		methods: {
 			// increment() {
 			// 	this.$store.dispatch('increment');
@@ -29,7 +43,11 @@
 				'decrement',
 			]),
 			incrementWithValue() {
-				this.$store.dispatch('incrementWithValue', this.incrementValue);
+				try {
+					this.$store.dispatch('incrementWithValue', this.incrementValue);
+				} catch(error) {
+					alert(error);
+				}
 			},
 		}
 	};
