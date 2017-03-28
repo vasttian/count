@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 // 引入store 对象
-	import store from './store.js'
+import store from './store.js'
 
 new Vue({
   el: '#app',
@@ -10,4 +10,4 @@ new Vue({
   // 注入到根实例
   store,
   render: h => h(App)
-})
+});

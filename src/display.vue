@@ -29,7 +29,7 @@
   			count: 'count'
   		})
   	}
-	}
+	};
 </script>
 <style>
 	h3 {

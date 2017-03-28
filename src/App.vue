@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-  <img src="./assets/logo.png">
-  <display></display>
-  <increment></increment>
+    <img src="./assets/logo.png">
+    <display></display>
+    <increment></increment>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
       display,
       increment,
     }
-  }
+  };
 </script>
 
 <style>
