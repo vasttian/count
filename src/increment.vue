@@ -21,7 +21,7 @@
 		data: {
 			return {
 				incrementValue: 0,
-			}
+			};
 		},
 
 		// computed 从 state 中获取初始状态
@@ -49,7 +49,7 @@
 					alert(error);
 				}
 			},
-		}
+		},
 	};
 </script>
 

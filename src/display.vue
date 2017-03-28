@@ -11,7 +11,7 @@
 	import {mapState} from 'vuex';
 	export default {
 		// computed: {
-		// 	count () {
+		// 	count() {
 		// 		return this.$store.state.count;
 		// 	}
 		// }
@@ -22,7 +22,7 @@
   	//   "count"
   	// ])
   	computed: {
-  		localComputed () {
+  		localComputed() {
   			return this.count + 80;
   		},
   		...mapState({

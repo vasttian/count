@@ -11,7 +11,7 @@
   import increment from './increment.vue';
 
   export default {
-    data () {
+    data() {
       return {}
     },
     components: {

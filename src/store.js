@@ -56,7 +56,7 @@ const store = new Vuex.Store({
     	commit("SHOW_WAITING_MESSAGE");
       let intValue = parseInt(value, 10);
 	    setTimeout(function() {
-	      if(isNaN(intValue)) {
+	      if (isNaN(intValue)) {
 	        alert("Not an Interger");
 	      } else {
 	      	commit("HIDE_WAITING_MESSAGE");

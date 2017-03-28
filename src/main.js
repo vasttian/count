@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-// 引入store 对象
+// 引入 store 对象
 import store from './store.js'
 
 new Vue({
