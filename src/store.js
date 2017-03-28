@@ -6,6 +6,12 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
 	state: {
 		count: 20,
+
+		// 新增waiting  状态
+    waiting: false,
+
+    // 额外需要增加的数字
+    anotherIncrement: 5
 	},
 	mutations: {
 		// inc 1
@@ -19,7 +25,7 @@ const store = new Vuex.Store({
 		},
 
 		INCREMENT_WITH_VALUE(state, value) {
-      state.count += value;
+      state.count += value.intValue + value.anotherValue;
     },
 
     // 显示和隐藏waiting
@@ -54,16 +60,22 @@ const store = new Vuex.Store({
     // 2s 响应
     incrementWithValue({commit}, value) {
     	commit("SHOW_WAITING_MESSAGE");
-      let intValue = parseInt(value, 10);
+      let intValue = parseInt(value.value, 10);
+      let anotherValue = value.anotherValue;
 	    setTimeout(function() {
 	      if (isNaN(intValue)) {
 	        alert("Not an Interger");
 	      } else {
 	      	commit("HIDE_WAITING_MESSAGE");
-	        commit("INCREMENT_WITH_VALUE", intValue);
+	        commit("INCREMENT_WITH_VALUE", {intValue, anotherValue});
 	      }
 	    }, 2000);
 	  },
+	},
+
+	// getters
+	getters: {
+		countAnother: state => state.anotherIncrement,
 	}
 });
 

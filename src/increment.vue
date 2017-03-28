@@ -28,7 +28,12 @@
     computed: {
       show: function() {
         return this.$store.state.waiting;
-      }
+      },
+
+      // 获取getters
+      countAnother: function () {
+        return this.$store.getters.countAnother;
+      },
     },
 		methods: {
 			// increment() {
@@ -44,7 +49,8 @@
 			]),
 			incrementWithValue() {
 				try {
-					this.$store.dispatch('incrementWithValue', this.incrementValue);
+					// dispatch 只能接受一个参数，需要传对象参数
+          this.$store.dispatch("incrementWithValue", { value: this.incrementValue, anotherValue: this.countAnother});
 				} catch(error) {
 					alert(error);
 				}
