@@ -1,0 +1,6 @@
+// user mutations
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+export const INCREMENT_WITH_VALUE = 'INCREMENT_WITH_VALUE';
+export const SHOW_WAITING_MESSAGE = 'SHOW_WAITING_MESSAGE';
+export const HIDE_WAITING_MESSAGE = 'HIDE_WAITING_MESSAGE';
