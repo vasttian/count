@@ -8,6 +8,7 @@
 			<input type="text" v-model="incrementValue">
 			<button @click="incrementWithValue">increment</button>
 		</div>
+		
 		<!-- 展示信息 -->
     <div v-if ="show">waiting</div>
 	</div>
@@ -16,7 +17,7 @@
 <script>
 
 	// 引入mapActions
-	import {mapActions} from 'vuex';
+	import { mapActions } from 'vuex';
 	export default {
 		data() {
 			return {
