@@ -27,12 +27,12 @@
 
 		// computed 从 state 中获取初始状态
     computed: {
-      show: function() {
+      show() {
         return this.$store.state.waiting;
       },
 
       // 获取getters
-      countAnother: function () {
+      countAnother() {
         return this.$store.getters.countAnother;
       },
     },

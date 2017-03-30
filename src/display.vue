@@ -21,7 +21,7 @@
   		}),
 
   		// 获取getters
-  		countAnother: function () {
+  		countAnother() {
         return this.$store.getters.countAnother;
       },
   	}
